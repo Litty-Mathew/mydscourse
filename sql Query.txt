@@ -1,0 +1,14 @@
+/****** Script for Before Travel data  ******/
+SELECT a. [ReportID]
+      	,a.[ReportDate]
+      	,a.[ReportType]
+      	,a.[ReportTypeVerbose]
+ 	,a.[FinalDiagnosis]
+ 	,a.[IllnessHistory]
+	,b.TRIAStatus
+	,a.[TravelInterventionOutcomeDDARText]
+	,a.[TravelInterventionOutcome]
+     
+  FROM [DQDAR].[dbo].[vwMainIncidenceFull] a LEFT JOIN [DQDAR].[dbo].[vwTRIA] b  ON a.ReportID = b.ReportID
+  where  a.[NotificationTimeAbbreviated]='Before' and (a.[ReportDate] between '2015-01-01' and '2019-12-31')
+ 
