@@ -9,6 +9,6 @@ SELECT a. [ReportID]
 	,a.[TravelInterventionOutcomeDDARText]
 	,a.[TravelInterventionOutcome]
      
-  FROM [DQDAR].[dbo].[vwMainIncidenceFull] a LEFT JOIN [DQDAR].[dbo].[vwTRIA] b  ON a.ReportID = b.ReportID
+  FROM [vwMainIncidenceFull] a LEFT JOIN [vwTRIA] b  ON a.ReportID = b.ReportID
   where  a.[NotificationTimeAbbreviated]='Before' and (a.[ReportDate] between '2015-01-01' and '2019-12-31')
  
